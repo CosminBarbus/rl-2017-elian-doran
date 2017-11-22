@@ -35,5 +35,14 @@ namespace ElianDoran.iQuest.Homework01
 
             return classes.ToList();
         }
+
+        /// <summary>
+        /// Returns a <see cref="string"/> that represents the current <see cref="Animal"/>.
+        /// </summary>
+        /// <returns>A <see cref="string"/> that represents the current <see cref="Animal"/>.</returns>
+        public override string ToString()
+        {
+            return String.Format("The {0} makes {1}.", Name, Sound);
+        }
     }
 }

@@ -17,6 +17,8 @@ namespace ElianDoran.iQuest.Homework01
 
         static void Main(string[] args)
         {
+            Console.Title = "iQuest Homework 01";
+
             using (var synthesizer = new SpeechSynthesizer())
             {
                 synthesizer.Volume = 100;
@@ -26,11 +28,8 @@ namespace ElianDoran.iQuest.Homework01
 
                 foreach (var animal in animals)
                 {
-                    var phrase = String.Format("The {0} makes {1}", animal.Name, animal.Sound);
-
-                    synthesizer.Speak(phrase);
-
-                    Console.WriteLine();
+                    synthesizer.Speak(animal.ToString());
+                    Console.WriteLine("\b.");
                 }
             }
 
