@@ -10,6 +10,9 @@ namespace ElianDoran.iQuest.Homework01
     {
         static void Main(string[] args)
         {
+            List<Animal> animals = Animal.GetAllAnimals();
+
+
         }
     }
 }
