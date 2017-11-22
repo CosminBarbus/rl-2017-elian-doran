@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace iQuest_Homework_01
+namespace ElianDoran.iQuest.Homework01
 {
     class Program
     {
