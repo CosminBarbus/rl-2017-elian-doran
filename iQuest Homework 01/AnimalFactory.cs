@@ -7,22 +7,22 @@ using System.Text;
 namespace ElianDoran.iQuest.Homework01
 {
     /// <summary>
-    /// Finds all subclasses of the <see cref="Animal"/> class by means of reflection and creates an instance of them.
+    /// Provides methods for obtaining instances of <see cref="IAnimal"/> implementations.
     /// </summary>
-    public class AnimalFactory
+    public static class AnimalFactory
     {
         /// <summary>
-        /// Returns a <see cref="List{}"/> containing new instances of all the <see cref="Animal"/> classes.
-        /// The animals are loaded through reflection of the <see cref="iQuest.Homework01.Animals"/> namespace.
+        /// Returns a <see cref="List{}"/> containing new instances of all the <see cref="IAnimal"/> implementations.
+        /// The search is limited to the namespace given by the <paramref name="searchNamespace"/> parameter.
         /// </summary>
         /// <param name="searchNamespace">The .NET namespace the search will be limited to.</param>
-        /// <returns>A <see cref="List{}"/> of <see cref="Animal"/></returns>
-        public static List<Animal> ObtainByReflection(string searchNamespace)
+        /// <returns>A <see cref="List{}"/> of <see cref="IAnimal"/>.</returns>
+        public static List<IAnimal> ObtainByReflection(string searchNamespace)
         {
             var classes =
                 from t in Assembly.GetExecutingAssembly().GetTypes()
                 where t.Namespace == searchNamespace && t.IsClass
-                select (Animal)(t.GetConstructor(Type.EmptyTypes).Invoke(null));
+                select (IAnimal)(t.GetConstructor(Type.EmptyTypes).Invoke(null));
 
             return classes.ToList();
         }

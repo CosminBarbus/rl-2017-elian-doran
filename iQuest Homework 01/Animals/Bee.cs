@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace ElianDoran.iQuest.Homework01.Animals
 {
-    class Bee: Animal
+    class Bee: IAnimal
     {
-        public override string Name => "Bee";
+        public string Name => "Bee";
 
-        public override string Sound => "buzz";
+        public string Sound => "buzz";
     }
 }

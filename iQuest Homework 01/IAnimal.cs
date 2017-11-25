@@ -10,16 +10,16 @@ namespace ElianDoran.iQuest.Homework01
     /// <summary>
     /// The physical representation of a type of animal. This class is abstract.
     /// </summary>
-    public abstract class Animal
+    public interface IAnimal
     {
         /// <summary>
-        /// The name of the <see cref="Animal"/> (i.e. dog). The Get accessor must be overriden in derived class to provide the name.
+        /// The name of the <see cref="IAnimal"/> (i.e. dog). The Get accessor must be overriden in derived class to provide the name.
         /// </summary>
-        public virtual string Name { get; }
+        string Name { get; }
 
         /// <summary>
-        /// An onomatopoeia representing the sound this <see cref="Animal"/> makes.
+        /// An onomatopoeia representing the sound this <see cref="IAnimal"/> makes.
         /// </summary>
-        public virtual string Sound { get; }
+        string Sound { get; }
     }
 }

@@ -29,7 +29,7 @@ namespace ElianDoran.iQuest.Homework01
                 synthesizer.Volume = 100;
                 synthesizer.SpeakProgress += Synthesizer_SpeakProgress;
 
-                List<Animal> animals = AnimalFactory.ObtainByReflection(animalNamespace);
+                List<IAnimal> animals = AnimalFactory.ObtainByReflection(animalNamespace);
 
                 foreach (var animal in animals)
                 {
