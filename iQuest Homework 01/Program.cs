@@ -28,7 +28,9 @@ namespace ElianDoran.iQuest.Homework01
 
                 foreach (var animal in animals)
                 {
-                    synthesizer.Speak(animal.ToString());
+                    var phrase = String.Format("The {0} makes {1}.", animal.Name, animal.Sound);
+
+                    synthesizer.Speak(phrase);
                     Console.WriteLine("\b.");
                 }
             }
