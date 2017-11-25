@@ -10,7 +10,7 @@ namespace ElianDoran.iQuest.Homework01
     /// <summary>
     /// The physical representation of a type of animal. This class is abstract.
     /// </summary>
-    abstract class Animal
+    public abstract class Animal
     {
         /// <summary>
         /// The name of the <see cref="Animal"/> (i.e. dog). The Get accessor must be overriden in derived class to provide the name.
@@ -21,19 +21,5 @@ namespace ElianDoran.iQuest.Homework01
         /// An onomatopoeia representing the sound this <see cref="Animal"/> makes.
         /// </summary>
         public virtual string Sound { get; }
-
-        /// <summary>
-        /// Returns a <see cref="List{}"/> containing new instances of all the <see cref="Animal"/> classes.
-        /// The animals are loaded through reflection of the <see cref="iQuest.Homework01.Animals"/> namespace.
-        /// </summary>
-        /// <returns>A <see cref="List{}"/> of <see cref="Animal"/></returns>
-        public static List<Animal> GetAllAnimals() {
-            var classes =
-                from t in Assembly.GetExecutingAssembly().GetTypes()
-                where t.Namespace == "ElianDoran.iQuest.Homework01.Animals" && t.IsClass
-                select (Animal)(t.GetConstructor(Type.EmptyTypes).Invoke(null));
-
-            return classes.ToList();
-        }
     }
 }

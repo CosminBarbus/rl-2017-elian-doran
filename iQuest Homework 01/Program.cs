@@ -24,7 +24,7 @@ namespace ElianDoran.iQuest.Homework01
                 synthesizer.Volume = 100;
                 synthesizer.SpeakProgress += Synthesizer_SpeakProgress;
 
-                List<Animal> animals = Animal.GetAllAnimals();
+                List<Animal> animals = AnimalFactory.ObtainByReflection();
 
                 foreach (var animal in animals)
                 {
