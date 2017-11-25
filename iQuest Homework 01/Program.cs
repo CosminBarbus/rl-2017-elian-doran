@@ -9,6 +9,11 @@ namespace ElianDoran.iQuest.Homework01
 {
     class Program
     {
+        /// <summary>
+        /// The fully qualified name of the <see cref="Animals"/> namespace.
+        /// </summary>
+        static readonly string animalNamespace = typeof(Program).Namespace + "." + nameof(Animals);
+
         static void Pause()
         {
             Console.Write("\nPress any key to continue...");
@@ -24,7 +29,7 @@ namespace ElianDoran.iQuest.Homework01
                 synthesizer.Volume = 100;
                 synthesizer.SpeakProgress += Synthesizer_SpeakProgress;
 
-                List<Animal> animals = AnimalFactory.ObtainByReflection();
+                List<Animal> animals = AnimalFactory.ObtainByReflection(animalNamespace);
 
                 foreach (var animal in animals)
                 {
