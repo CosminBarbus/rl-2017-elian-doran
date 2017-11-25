@@ -1,0 +1,15 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ElianDoran.iQuest.Homework01.Animals
+{
+    class Dog: IAnimal
+    {
+        public string Name => "Dog";
+
+        public string Sound => "woof-woof";
+    }
+}
